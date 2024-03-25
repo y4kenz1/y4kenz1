@@ -1,0 +1,81 @@
+.games-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.games-image {
+  width: var(--dl-size-size-large);
+  align-self: center;
+  margin-top: var(--dl-space-space-sixunits);
+  object-fit: cover;
+}
+.games-text {
+  font-size: 25px;
+  margin-top: var(--dl-space-space-twounits);
+  font-family: "IBM Plex Mono";
+  font-weight: 700;
+  line-height: 1.15;
+  text-transform: none;
+  text-decoration: none;
+}
+.games-text1 {
+  font-size: 25px;
+  margin-top: var(--dl-space-space-halfunit);
+  font-family: "IBM Plex Mono";
+  font-weight: 700;
+  line-height: 1.15;
+  text-transform: none;
+  text-decoration: none;
+}
+.games-text2 {
+  font-size: 25px;
+  margin-top: var(--dl-space-space-halfunit);
+  font-family: "IBM Plex Mono";
+  font-weight: 700;
+  line-height: 1.15;
+  text-transform: none;
+  text-decoration: none;
+}
+.games-text3 {
+  font-size: 25px;
+  margin-top: var(--dl-space-space-halfunit);
+  font-family: "IBM Plex Mono";
+  font-weight: 700;
+  line-height: 1.15;
+  text-transform: none;
+  text-decoration: none;
+}
+.games-navlink {
+  font-size: 25px;
+  font-style: normal;
+  margin-top: var(--dl-space-space-halfunit);
+  transition: 0.3s;
+  font-family: "IBM Plex Mono";
+  font-weight: 700;
+  text-decoration: none;
+}
+.games-navlink:hover {
+  text-decoration: underline;
+}
+.games-link {
+  display: contents;
+}
+.games-image1 {
+  width: 200px;
+  margin-top: var(--dl-space-space-halfunit);
+  object-fit: cover;
+  text-decoration: none;
+}
+.games-text6 {
+  font-size: 25px;
+  margin-top: var(--dl-space-space-halfunit);
+  font-family: "IBM Plex Mono";
+  font-weight: 700;
+  line-height: 1.15;
+  text-transform: none;
+  text-decoration: none;
+}

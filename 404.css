@@ -1,0 +1,26 @@
+.page-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.page-image {
+  width: var(--dl-size-size-large);
+  align-self: center;
+  margin-top: var(--dl-space-space-sixunits);
+  object-fit: cover;
+}
+.page-navlink {
+  font-size: 25px;
+  font-style: normal;
+  margin-top: var(--dl-space-space-twounits);
+  transition: 0.3s;
+  font-family: "IBM Plex Mono";
+  font-weight: 700;
+  text-decoration: none;
+}
+.page-navlink:hover {
+  text-decoration: underline;
+}

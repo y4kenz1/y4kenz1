@@ -1,0 +1,87 @@
+.home-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.home-image {
+  width: var(--dl-size-size-large);
+  align-self: center;
+  margin-top: var(--dl-space-space-sixunits);
+  object-fit: cover;
+}
+.home-navlink {
+  font-size: 25px;
+  font-style: normal;
+  margin-top: var(--dl-space-space-twounits);
+  transition: 0.3s;
+  font-family: "IBM Plex Mono";
+  font-weight: 700;
+  text-decoration: none;
+}
+.home-navlink:hover {
+  text-decoration: underline;
+}
+.home-navlink1 {
+  font-size: 25px;
+  font-style: normal;
+  margin-top: var(--dl-space-space-halfunit);
+  transition: 0.3s;
+  font-family: "IBM Plex Mono";
+  font-weight: 700;
+  text-decoration: none;
+}
+.home-navlink1:hover {
+  text-decoration: underline;
+}
+.home-navlink2 {
+  font-size: 25px;
+  font-style: normal;
+  margin-top: var(--dl-space-space-halfunit);
+  transition: 0.3s;
+  font-family: "IBM Plex Mono";
+  font-weight: 700;
+  text-decoration: none;
+}
+.home-navlink2:hover {
+  text-decoration: underline;
+}
+.home-navlink3 {
+  font-size: 25px;
+  font-style: normal;
+  margin-top: var(--dl-space-space-halfunit);
+  transition: 0.3s;
+  font-family: "IBM Plex Mono";
+  font-weight: 700;
+  text-decoration: none;
+}
+.home-navlink3:hover {
+  text-decoration: underline;
+}
+.home-navlink4 {
+  font-size: 25px;
+  font-style: normal;
+  margin-top: var(--dl-space-space-halfunit);
+  transition: 0.3s;
+  font-family: "IBM Plex Mono";
+  font-weight: 700;
+  text-decoration: none;
+}
+.home-navlink4:hover {
+  text-decoration: underline;
+}
+.home-navlink5 {
+  font-size: 25px;
+  font-style: normal;
+  margin-top: var(--dl-space-space-halfunit);
+  transition: 0.3s;
+  font-family: "IBM Plex Mono";
+  font-weight: 700;
+  text-decoration: none;
+}
+.home-navlink5:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,82 @@
+.films-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.films-image {
+  width: var(--dl-size-size-large);
+  align-self: center;
+  margin-top: var(--dl-space-space-sixunits);
+  object-fit: cover;
+}
+.films-text {
+  font-size: 25px;
+  margin-top: var(--dl-space-space-twounits);
+  font-family: "IBM Plex Mono";
+  font-weight: 700;
+  line-height: 1.15;
+  text-transform: none;
+  text-decoration: none;
+}
+.films-text1 {
+  font-size: 25px;
+  margin-top: var(--dl-space-space-halfunit);
+  font-family: "IBM Plex Mono";
+  font-weight: 700;
+  line-height: 1.15;
+  text-transform: none;
+  text-decoration: none;
+}
+.films-text2 {
+  font-size: 25px;
+  margin-top: var(--dl-space-space-halfunit);
+  font-family: "IBM Plex Mono";
+  font-weight: 700;
+  line-height: 1.15;
+  text-transform: none;
+  text-decoration: none;
+}
+.films-navlink {
+  font-size: 25px;
+  font-style: normal;
+  margin-top: var(--dl-space-space-halfunit);
+  transition: 0.3s;
+  font-family: "IBM Plex Mono";
+  font-weight: 700;
+  text-decoration: none;
+}
+.films-navlink:hover {
+  text-decoration: underline;
+}
+.films-link {
+  font-style: normal;
+  margin-top: var(--dl-space-space-halfunit);
+  transition: 0.3s;
+  font-family: "IBM Plex Mono";
+  font-weight: 600;
+}
+.films-link:hover {
+  text-decoration: underline dotted;
+}
+.films-text7 {
+  font-size: 25px;
+  margin-top: var(--dl-space-space-halfunit);
+  font-family: "IBM Plex Mono";
+  font-weight: 700;
+  line-height: 1.15;
+  text-transform: none;
+  text-decoration: none;
+}
+.films-text8 {
+  font-size: 25px;
+  margin-top: var(--dl-space-space-halfunit);
+  font-family: "IBM Plex Mono";
+  font-weight: 700;
+  line-height: 1.15;
+  text-transform: none;
+  text-decoration: none;
+}
