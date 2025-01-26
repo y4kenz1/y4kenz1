@@ -10,11 +10,11 @@
     <meta property="twitter:card" content="summary_large_image" />
 
     <style data-tag="reset-style-sheet">
-      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;  -webkit-font-smoothing: antialiased;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;  color: inherit;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}details {  display: block;  margin: 0;  padding: 0;}summary::-webkit-details-marker {  display: none;}[data-thq="accordion"] [data-thq="accordion-content"] {  max-height: 0;  overflow: hidden;  transition: max-height 0.3s ease-in-out;  padding: 0;}[data-thq="accordion"] details[data-thq="accordion-trigger"][open] + [data-thq="accordion-content"] {  max-height: 300vh;}details[data-thq="accordion-trigger"][open] summary [data-thq="accordion-icon"] {  transform: rotate(180deg);}html { scroll-behavior: smooth  }
     </style>
     <style data-tag="default-style-sheet">
       html {
-        font-family: IBM Plex Mono;
+        font-family: "IBM Plex Mono",serif;
         font-size: 16px;
       }
 
@@ -26,8 +26,9 @@
         letter-spacing: normal;
         line-height: 1.15;
         color: var(--dl-color-gray-black);
-        background-color: var(--dl-color-gray-white);
+        background: var(--dl-color-gray-white);
 
+        fill: var(--dl-color-gray-black);
       }
     </style>
     <link
@@ -36,13 +37,23 @@
     />
     <link
       rel="shortcut icon"
-      href="public/y41-trans-black1.png"
+      href="public/y41-trans-blue.png"
       type="icon/png"
       sizes="32x32"
     />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
       data-tag="font"
     />
     <link
@@ -55,36 +66,246 @@
     <div>
       <link href="./index.css" rel="stylesheet" />
 
-      <div class="home-container">
+      <div class="home-container1">
         <img
-          alt="image"
-          src="public/Logos/y41-trans-black-200h.png"
-          class="home-image"
+          id="logo"
+          alt="Logo"
+          src="public/y41-trans-blue.png"
+          class="logo"
         />
-        <a href="links.html" class="home-navlink">
-          <span>&lt;LINKS&gt;</span>
-          <br />
-        </a>
-        <a href="lists.html" class="home-navlink1">
-          <span>&lt;LISTS&gt;</span>
-          <br />
-        </a>
-        <a href="art.html" class="home-navlink2">
-          <span>&lt;ART&gt;</span>
-          <br />
-        </a>
-        <a href="films.html" class="home-navlink3">
-          <span>&lt;FILMS&gt;</span>
-          <br />
-        </a>
-        <a href="games.html" class="home-navlink4">
-          <span>&lt;GAMES&gt;</span>
-          <br />
-        </a>
-        <a href="texts.html" class="home-navlink5">
-          <span>&lt;TEXTS&gt;</span>
-          <br />
-        </a>
+        <div class="home-about">
+          <a
+            href="https://www.linkedin.com/in/y4kenz1/"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="home-link10"
+          >
+            <h3 id="linkedin" class="home-linked-in">LinkedIn</h3>
+          </a>
+          <a
+            href="https://github.com/y4kenz1"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="home-link11"
+          >
+            <h3 id="github" class="home-git-hub">GitHub</h3>
+          </a>
+          <a
+            href="https://letterboxd.com/y4kenz1/"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="home-link12"
+          >
+            <h3 id="letterboxd" class="home-letterboxd">Letterboxd</h3>
+          </a>
+          <a
+            href="https://www.imdb.com/user/ur96871603/"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="home-link13"
+          >
+            <h3 id="imdb" class="home-im-db">IMDb</h3>
+          </a>
+          <a
+            href="https://goodreads.com/y4kenz1"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="home-link14"
+          >
+            <h3 id="goodreads" class="home-goodreads">Goodreads</h3>
+          </a>
+          <a
+            href="https://x.com/y4kenz1"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="home-link15"
+          >
+            <h3 id="twitter" class="home-twitter">Twitter</h3>
+          </a>
+          <a
+            href="https://www.instagram.com/y4kenz1/"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="home-link16"
+          >
+            <h3 id="instagram" class="home-instagram">Instagram</h3>
+          </a>
+          <a
+            href="https://www.youtube.com/@y4kenz1"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="home-link17"
+          >
+            <h3 id="youtube" class="home-you-tube">YouTube</h3>
+          </a>
+          <a
+            href="https://www.tiktok.com/@y4kenz1"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="home-link18"
+          >
+            <h3 id="tiktok" class="home-tik-tok">TikTok</h3>
+          </a>
+          <a
+            href="https://t.me/herm1t4ge"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="home-link19"
+          >
+            <h3 id="telegram" class="home-telegram">Telegram</h3>
+          </a>
+          <a
+            href="https://steamcommunity.com/id/y4kenz1/"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="home-link20"
+          >
+            <h3 id="steam" class="home-steam">Steam</h3>
+          </a>
+          <a
+            href="https://y4kenz1.itch.io/"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="home-link21"
+          >
+            <h3 id="itcho" class="home-itchio">itch.io</h3>
+          </a>
+        </div>
+        <div class="home-container2">
+          <h1 class="home-text1">2024</h1>
+          <div class="home-container3">
+            <div id="list2024" class="home-item">
+              <a
+                href="404.html"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <h2>The List</h2>
+              </a>
+            </div>
+            <div id="thatsthat" class="home-item">
+              <a href="https://youtu.be/knBcueDeLjw?si=zFm3LLr4pbRxVv6I" target="_blank">
+              <img
+                alt="That's That Poster"
+                src="public/thatsthat_poster.png"
+                class="home-image"
+              />
+              </a>
+            </div>
+            <div id="mixtape" class="home-item">
+              <a href="https://sdz.sh/BWcbaI" target="_blank">
+              <img
+                alt="Mixtape Playlist"
+                src="public/mixtape_playlist.png"
+                class="home-image"
+              />
+              </a>
+            </div>
+            <div id="nosignal" class="home-item">
+              <a href="https://www.instagram.com/p/DCXfOsZiUZA" target="_blank">
+              <img
+                alt="No Signal T-Shirt"
+                src="public/nosignal_shirt.png"
+                class="home-image"
+              />
+              </a>
+            </div>
+            <div id="feelslikesummer" class="home-item">
+              <a href="https://sdz.sh/IZdX55" target="_blank">
+              <img
+                alt="Feels Like Summer Playlist"
+                src="public/feels_like_summer_playlist.png"
+                class="home-image"
+              />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="home-container2">
+          <h1 class="home-text1">2023</h1>
+          <div class="home-container3">
+            <div id="list2023" class="home-item">
+              <a
+                href="public/the_list_2023.pdf"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <h2>The List</h2>
+              </a>
+            </div>
+            <div id="episodes" class="home-item">
+              <a href="https://www.imdb.com/title/tt35108211" target="_blank">
+              <img
+                alt="Episodes Poster"
+                src="public/episodes_poster.jpg"
+                class="home-image"
+              />
+              </a>
+            </div>
+            <div id="075" class="home-item">
+              <img
+                alt="075 aka Adidas Art Contest"
+                src="public/075.jpg"
+                class="home-image"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="home-container2">
+          <h1 class="home-text1">2022</h1>
+          <div class="home-container3">
+            <div id="list2022" class="home-item">
+              <a
+                href="public/the_list_2022.pdf"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <h2>The List</h2>
+              </a>
+            </div>
+            <div id="sketchy" class="home-item">
+              <a href="https://www.instagram.com/life_of_sketchy" target="_blank">
+              <img
+                alt="Sketchy"
+                src="public/sketchy.png"
+                class="home-image"
+              />
+              </a>
+            </div>
+            <div id="waw" class="home-item">
+              <a href="https://youtu.be/XCizmbmvu-c" target="_blank">
+              <img
+                alt="WAW Poster"
+                src="public/waw_poster.png"
+                class="home-image"
+              />
+              </a>
+            </div>
+            <div id="071" class="home-item">
+              <img
+                alt="071 aka w4rs4w"
+                src="public/071.png"
+                class="home-image-400"
+              />
+            </div>
+            <div id="tamashi" class="home-item">
+              <a href="public/tamashi.html" target="_blank">
+              <img
+                alt="Tamashi Logo"
+                src="public/tamashi_logo.png"
+                class="home-image"
+              />
+              </a>
+            </div>
+            <div id="068" class="home-item">
+              <img
+                alt="068 aka un1te"
+                src="public/068.png"
+                class="home-image"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
