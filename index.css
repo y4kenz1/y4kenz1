@@ -219,6 +219,14 @@ h1 {
   display: block;
 }
 
+#inout .home-image {
+  transition: opacity 0.3s ease-in-out;
+}
+
+#inout:hover .home-image {
+  content: url('public/inout-in.png');
+}
+
 @media(max-width: 479px) {
   .home-linked-in {
     margin: var(--dl-space-space-halfunit);
