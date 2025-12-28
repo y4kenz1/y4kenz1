@@ -132,29 +132,6 @@
             // ensure continuous shuffle behavior: when playlist finishes, keep playing
             // nothing needed here because loop is set. This stub remains for future hooks.
         }
-
-        // UX: allow unmute on click
-        const hint = document.getElementById('hint');
-        hint.addEventListener('click', () => {
-            try {
-                if (player) {
-                    player.unMute();
-                    // if paused because of autoplay restrictions, try to play again
-                    player.playVideo && player.playVideo();
-                }
-            } catch(e){}
-            hint.style.display = 'none';
-        });
-
-        // Also unhide hint only if page loaded with sound-muted autoplay policy (we always start muted)
-        // Clicking anywhere will unmute as well
-        document.addEventListener('click', (ev) => {
-            // if clicked outside the hint, still unmute once
-            if (ev.target !== hint) {
-                try { player && player.unMute(); } catch(e){}
-                hint.style.display = 'none';
-            }
-        }, {once:true});
     </script>
 </body>
 </html>
