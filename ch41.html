@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>YouTube Playlist — Fullscreen Shuffle Autoplay</title>
+    <style>
+        html,body{height:100%;margin:0}
+        /* player container fills whole window */
+        #player{width:100vw;height:100vh;position:fixed;top:0;left:0}
+        /* simple unmute hint */
+        #hint{
+            position:fixed;right:12px;bottom:12px;padding:8px 12px;background:rgba(0,0,0,0.6);
+            color:#fff;border-radius:6px;font-family:system-ui,Segoe UI,Roboto,Arial;font-size:13px;
+            cursor:pointer;user-select:none;
+        }
+    </style>
+</head>
+<body>
+    <div id="player"></div>
+    <div id="hint">Click to unmute</div>
+
+    <script>
+        // --- CONFIGURE: put your playlist ID here (no "https://", just the playlist id like "PL...") ---
+        const PLAYLIST_ID = "PLJU0P5FhIhVg4EHtOAhtsOU3CaHXaSlQY";
+        // -----------------------------------------------------------------------------------------
+
+        // Load YouTube IFrame API
+        let tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        document.head.appendChild(tag);
+
+        let player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '100%',
+                width: '100%',
+                playerVars: {
+                    listType: 'playlist',
+                    list: PLAYLIST_ID,
+                    autoplay: 1,      // try to start automatically
+                    controls: 1,
+                    rel: 0,
+                    modestbranding: 1,
+                    fs: 1,
+                    playsinline: 1,
+                    // loop works together with playlist param: keep it on so it continues
+                    loop: 1
+                },
+                events: {
+                    onReady: onPlayerReady,
+                    onStateChange: onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerReady() {
+            // Many browsers block autoplay with sound; start muted to ensure autoplay works
+            try { player.mute(); } catch(e){}
+            // try to enable shuffle and start from a random index
+            try {
+                player.setLoop(true);
+                // setShuffle is asynchronous; call it and then pick a random start after playlist is available
+                if (typeof player.setShuffle === 'function') player.setShuffle(true);
+            } catch(e){}
+
+            startRandomStart(0);
+        }
+
+        // If playlist not yet loaded into the player, poll for it a few times
+        function startRandomStart(attempt) {
+            const MAX_ATTEMPTS = 25;
+            const RETRY_MS = 150;
+            const playlist = (player && typeof player.getPlaylist === 'function') ? player.getPlaylist() : null;
+            if (playlist && playlist.length > 0) {
+                const idx = Math.floor(Math.random() * playlist.length);
+                // start at random index
+                try {
+                    player.playVideoAt(idx);
+                } catch (e) {
+                    // fallback: load playlist and start at index
+                    try {
+                        player.loadPlaylist({list: PLAYLIST_ID, index: idx});
+                    } catch (e2){}
+                }
+            } else if (attempt < MAX_ATTEMPTS) {
+                setTimeout(()=> startRandomStart(attempt+1), RETRY_MS);
+            } else {
+                // as last resort, load playlist and start at random index
+                const idx = Math.floor(Math.random() * 10); // unknown length; start somewhere
+                try { player.loadPlaylist({list: PLAYLIST_ID, index: idx}); } catch(e){}
+            }
+        }
+
+        function onPlayerStateChange(e) {
+            // ensure continuous shuffle behavior: when playlist finishes, keep playing
+            // nothing needed here because loop is set. This stub remains for future hooks.
+        }
+
+        // UX: allow unmute on click
+        const hint = document.getElementById('hint');
+        hint.addEventListener('click', () => {
+            try {
+                if (player) {
+                    player.unMute();
+                    // if paused because of autoplay restrictions, try to play again
+                    player.playVideo && player.playVideo();
+                }
+            } catch(e){}
+            hint.style.display = 'none';
+        });
+
+        // Also unhide hint only if page loaded with sound-muted autoplay policy (we always start muted)
+        // Clicking anywhere will unmute as well
+        document.addEventListener('click', (ev) => {
+            // if clicked outside the hint, still unmute once
+            if (ev.target !== hint) {
+                try { player && player.unMute(); } catch(e){}
+                hint.style.display = 'none';
+            }
+        }, {once:true});
+    </script>
+</body>
+</html>
