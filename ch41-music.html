@@ -55,16 +55,52 @@
         }
 
         function onPlayerReady() {
-            // Many browsers block autoplay with sound; start muted to ensure autoplay works
-            try { player.mute(); } catch(e){}
-            // try to enable shuffle and start from a random index
+            // Attempt to start unmuted
             try {
-                player.setLoop(true);
-                // setShuffle is asynchronous; call it and then pick a random start after playlist is available
-                if (typeof player.setShuffle === 'function') player.setShuffle(true);
-            } catch(e){}
+                player.unMute();
+                player.playVideo();
+            } catch (e) {
+                console.warn('Autoplay with sound blocked, starting muted:', e);
+                player.mute();
+            }
 
-            startRandomStart(0);
+            // Enable shuffle and ensure it takes effect before starting playback
+            enableShuffleAndStart();
+        }
+
+        async function enableShuffleAndStart() {
+            try {
+                if (typeof player.setShuffle === 'function') {
+                    player.setShuffle(true);
+                }
+
+                // Wait for shuffle to take effect
+                await waitForShuffle();
+
+                // Start playback from a random index
+                startRandomStart(0);
+            } catch (e) {
+                console.error('Error enabling shuffle:', e);
+            }
+        }
+
+        function waitForShuffle(attempt = 0) {
+            const MAX_ATTEMPTS = 25;
+            const RETRY_MS = 150;
+
+            return new Promise((resolve, reject) => {
+                function checkShuffle() {
+                    if (player.getPlaylist() && player.getPlaylist().length > 0) {
+                        resolve();
+                    } else if (attempt < MAX_ATTEMPTS) {
+                        setTimeout(() => checkShuffle(attempt + 1), RETRY_MS);
+                    } else {
+                        reject(new Error('Shuffle did not take effect'));
+                    }
+                }
+
+                checkShuffle();
+            });
         }
 
         // If playlist not yet loaded into the player, poll for it a few times
