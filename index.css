@@ -164,6 +164,10 @@ h1 {
   margin: var(--dl-space-space-halfunit);
 }
 
+.home-discord {
+  margin: var(--dl-space-space-halfunit);
+}
+
 .home-link19 {
   display: contents;
 }
@@ -253,6 +257,9 @@ h1 {
     margin: var(--dl-space-space-halfunit);
   }
   .home-tik-tok {
+    margin: var(--dl-space-space-halfunit);
+  }
+  .home-discord {
     margin: var(--dl-space-space-halfunit);
   }
   .home-telegram {
